@@ -1,4 +1,6 @@
 import React from "react";
+import rapidImg from "../assets/rapid.png"
+import molaveImg from "../assets/molave.png"
 import flowerShopImg from "../assets/flowershop.png";
 import ecBookstoreImg from "../assets/ecbookstore.jpg";
 import clothingImg from "../assets/clothing.png";
@@ -11,6 +13,23 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "Molave Street Barbers (Capstone Project)",
+      description:
+        "A modern, responsive website built as a capstone project for Molave Street Barbers. The site features a clean design, service showcases, and intuitive navigation—focused on delivering a polished user experience across desktop and mobile devices.",
+      image: molaveImg,
+      link: "https://molavestreetbarbers.vercel.app/",
+      tech: ["React+Vite", "JavaScript", "Tailwind CSS", "HTML", "Supabase"],
+    },
+
+    {
+      title: "Rapid Solutions Website (Commission)",
+      description:
+        "A professional and fully responsive corporate website developed for Rapido Solutions. Designed to clearly present the company’s services, brand identity, and contact information with a clean layout and smooth user experience across all devices.",
+      image: rapidImg,
+      link: "https://rapidosolutions.tech/",
+      tech: ["HTML", "Tailwind CSS", "JavaScript", "React+Vite", "Supabase"],
+    },
     {
       title: "Flower Shop Website",
       description:
@@ -144,10 +163,10 @@ const Projects = () => {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-rose-300 border-1 border-stone-800 text-stone-800 px-4 py-2 rounded-sm text-sm font-semibold hover:bg-rose-400 transition-colors"
+                  className="inline-block bg-rose-300 border border-stone-800 text-stone-800 px-4 py-2 rounded-sm text-sm font-semibold hover:bg-rose-400 transition-colors"
                   style={{ fontFamily: "satoshi-medium" }}
                 >
-                  View Project
+                  Live Site
                 </a>
               </div>
             </motion.div>

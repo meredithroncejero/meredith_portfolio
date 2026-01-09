@@ -18,6 +18,8 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
+  const currentPath = location.pathname;
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -57,7 +59,7 @@ const Header = () => {
               to={link.href}
               key={link.href}
               className={`relative group transition-colors duration-300 ${
-                location.pathname === link.href
+                currentPath === link.href
                   ? "text-white"
                   : "hover:text-white"
               }`}
@@ -65,7 +67,7 @@ const Header = () => {
               {link.label}
               <span
                 className={`absolute left-0 bottom-[-4px] h-[2px] bg-stone-800 transition-all duration-300 ${
-                  location.pathname === link.href
+                  currentPath === link.href
                     ? "w-full"
                     : "w-0 group-hover:w-full"
                 }`}
@@ -103,7 +105,7 @@ const Header = () => {
               key={link.href}
               to={link.href}
               className={`block rounded p-2 transition ${
-                location.pathname === link.href
+                currentPath === link.href
                   ? "bg-stone-800 text-white"
                   : "text-stone-800 hover:bg-stone-800 hover:text-white"
               }`}

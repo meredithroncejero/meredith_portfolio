@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="min-h-screen flex flex-col -mt-10 md:flex-row items-center justify-center px-8 py-16 bg-white">
+    <section className="min-h-screen flex flex-col -mt-10 md:flex-row items-center justify-center px-8 md:px-30 py-16 bg-white">
       
       {/* Left: Image */}
       <motion.div
@@ -17,13 +17,13 @@ const About = () => {
         <img
           src={myImg}
           alt="Rachelle Pantinople"
-          className="w-94 h-94 object-cover border-7 border-stone-900 rounded-full shadow-lg"
+          className="w-90 md:w-94 h-90 md:h-94 object-cover border-7 border-stone-900 rounded-full shadow-lg"
         />
       </motion.div>
 
       {/* Right: Text */}
       <motion.div
-        className="md:w-1/2 text-center mr-10 md:text-left"
+        className="md:w-1/2 text-center md:text-left"
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
