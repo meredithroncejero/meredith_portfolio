@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { Menu, X } from "lucide-react"
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
-import { Button } from "@/components/ui/button"
-import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md"
-import { FaFacebookF, FaGithub, FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa"
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { MdEmail, MdPhone, MdLocationOn } from "react-icons/md";
+import { FaFacebookF, FaGithub, FaLinkedinIn, FaInstagram, FaTiktok } from "react-icons/fa";
 
+// Add "/certificates" to navMenu
 const navMenu = [
   { href: "/about", label: "About" },
   { href: "/skills", label: "Skills" },
   { href: "/projects", label: "Projects" },
+  { href: "/certificates", label: "Certificates" }, // ✅ new
 ];
 
 const Header = () => {
@@ -21,23 +23,17 @@ const Header = () => {
   const currentPath = location.pathname;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 border-b-2 border-stone-800 ${
-        scrolled
-          ? "bg-gradient-to-r from-rose-200 to-red-200 shadow-lg"
-          : "bg-red-200"
-      }`}
+      className={`sticky top-0 z-50 transition-all duration-300 border-b-2 border-stone-800
+             bg-gradient-to-r from-blue-200 to-red-200 shadow-lg`}
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-8">
-        
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link
@@ -45,7 +41,7 @@ const Header = () => {
             className="text-2xl text-stone-800 hover:text-white transition-colors duration-300"
             style={{ fontFamily: "satoshi-black" }}
           >
-            &lt;Qwerty/&gt;
+            &lt;Mere/&gt;
           </Link>
         </div>
 
@@ -59,17 +55,13 @@ const Header = () => {
               to={link.href}
               key={link.href}
               className={`relative group transition-colors duration-300 ${
-                currentPath === link.href
-                  ? "text-white"
-                  : "hover:text-white"
+                currentPath === link.href ? "text-white" : "hover:text-white"
               }`}
             >
               {link.label}
               <span
                 className={`absolute left-0 bottom-[-4px] h-[2px] bg-stone-800 transition-all duration-300 ${
-                  currentPath === link.href
-                    ? "w-full"
-                    : "w-0 group-hover:w-full"
+                  currentPath === link.href ? "w-full" : "w-0 group-hover:w-full"
                 }`}
               />
             </Link>
@@ -80,7 +72,7 @@ const Header = () => {
         <div className="hidden md:block">
           <Button
             onClick={() => setSheetOpen(true)}
-            className="bg-red-300 hover:bg-red-100 transition-all duration-300"
+            className="bg-blue-300 hover:bg-red-100 transition-all duration-300"
           >
             Contact Me
           </Button>
@@ -99,7 +91,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-gradient-to-b from-rose-200 to-red-200 border-t border-stone-800 px-6 py-4 space-y-4">
+        <div className="md:hidden bg-gradient-to-b from-blue-200 to-red-200 border-t border-stone-800 px-6 py-4 space-y-4">
           {navMenu.map((link) => (
             <Link
               key={link.href}
@@ -120,7 +112,7 @@ const Header = () => {
               setSheetOpen(true);
               setIsOpen(false);
             }}
-            className="w-full bg-red-300 hover:bg-red-100"
+            className="w-full bg-blue-300 hover:bg-blue-100"
           >
             Contact Me
           </Button>
@@ -129,74 +121,58 @@ const Header = () => {
 
       {/* Contact Sheet */}
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
-        <SheetContent side="right" className="bg-red-50">
+        <SheetContent side="right" className="bg-blue-50">
           <SheetHeader>
-            <SheetTitle className="text-2xl px-4 mt-10 text-stone-800" style={{fontFamily: 'satoshi-bold'}}>
+            <SheetTitle className="text-2xl px-4 mt-10 text-stone-800" style={{ fontFamily: "satoshi-bold" }}>
               Get in Touch
             </SheetTitle>
           </SheetHeader>
           <div className="px-10 space-y-4" style={{ fontFamily: "satoshi-medium" }}>
             {/* Email */}
             <div className="flex items-center gap-3">
-              <MdEmail className="text-rose-500" size={20} />
-              <span className="text-zinc-700">pantinoplerachelle16@gmail.com</span>
+              <MdEmail className="text-blue-300" size={20} />
+              <span className="text-zinc-700">meredithroncejero@gmail.com</span>
             </div>
-          
+
             {/* Phone */}
             <div className="flex items-center gap-3">
-              <MdPhone className="text-rose-500" size={20} />
-              <span className="text-zinc-700">+63 951 490 8319</span>
+              <MdPhone className="text-blue-300" size={20} />
+              <span className="text-zinc-700">+63 9562260601</span>
             </div>
-          
+
             {/* Location */}
             <div className="flex items-center gap-3">
-              <MdLocationOn className="text-rose-500" size={20} />
-              <span className="text-zinc-700">Rizal, Philippines</span>
+              <MdLocationOn className="text-blue-300" size={20} />
+              <span className="text-zinc-700">Camarines Norte, Philippines</span>
             </div>
-          
+
             {/* Social Links */}
-            <div className="pt-4 mt-20 border-t border-rose-200">
-              <h4 className="text-stone-800 mb-3" style={{fontFamily: 'satoshi-bold'}}>Social Media</h4>
+            <div className="pt-4 mt-20 border-t border-blue-200">
+              <h4 className="text-stone-800 mb-3" style={{ fontFamily: "satoshi-bold" }}>Social Media</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://www.facebook.com/rachellep16"
+                  href="https://www.facebook.com/meredith.roncejero"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white shadow hover:bg-rose-100 transition-colors"
+                  className="p-2 rounded-full bg-white shadow hover:bg-blue-100 transition-colors"
                 >
-                  <FaFacebookF className="text-rose-500" size={20} />
+                  <FaFacebookF className="text-blue-300" size={20} />
                 </a>
                 <a
-                  href="https://github.com/rchll-16"
+                  href="https://github.com/meredithroncejero"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white shadow hover:bg-rose-100 transition-colors"
+                  className="p-2 rounded-full bg-white shadow hover:bg-blue-100 transition-colors"
                 >
-                  <FaGithub className="text-rose-500" size={20} />
+                  <FaGithub className="text-blue-300" size={20} />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/pantinople-rachelle-a-165028246/"
+                  href="https://www.instagram.com/me1re1di1th1?igsh=Z29tNWEwdzlmYnhk"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white shadow hover:bg-rose-100 transition-colors"
+                  className="p-2 rounded-full bg-white shadow hover:bg-blue-100 transition-colors"
                 >
-                  <FaLinkedinIn className="text-rose-500" size={20} />
-                </a>
-                <a 
-                  href="https://www.instagram.com/qwrty_rchll/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white shadow hover:bg-rose-100 transition-colors"
-                >
-                  <FaInstagram className="text-rose-500" size={20} />
-                </a>
-                <a 
-                  href="https://www.tiktok.com/@qwerty_dev  "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white shadow hover:bg-rose-100 transition-colors"
-                >
-                  <FaTiktok className="text-rose-500" size={20} />
+                  <FaInstagram className="text-blue-300" size={20} />
                 </a>
               </div>
             </div>
@@ -207,4 +183,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;

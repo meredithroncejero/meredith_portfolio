@@ -16,7 +16,7 @@ const About = () => {
       >
         <img
           src={myImg}
-          alt="Rachelle Pantinople"
+          alt="Meredith Roncejero "
           className="w-90 md:w-94 h-90 md:h-94 object-cover border-7 border-stone-900 rounded-full shadow-lg"
         />
       </motion.div>
@@ -39,20 +39,19 @@ const About = () => {
           className="text-zinc-600 leading-relaxed mb-6"
           style={{ fontFamily: 'satoshi-medium' }}
         >
-          Hi! I'm <span className="font-semibold text-stone-800">Rachelle Pantinople</span>, 
-          an aspiring frontend developer passionate about crafting clean, 
-          user-friendly, and responsive web applications. I love transforming 
-          ideas into functional designs using HTML, CSS, JavaScript, React, 
-          and Tailwind CSS. My goal is to create experiences that are not only 
-          visually appealing but also intuitive to use.
+          Hi! I'm <span className="font-semibold text-stone-800">Meredith Roncejero</span>,
+          a passionate and driven Information Technology student with hands-on experience in UI/UX design,
+          backend and frontend development, and IoT-based projects. Skilled in Python, JavaScript, HTML, and CSS,
+          contributed to projects involving system automation, face-shape analysis, and predictive analytics.
+          With a strong foundation in networking basics and hardware integration, thrives in collaborative
+          environments where I can apply her technical skills, problem-solving abilities, and creativity to real-world projects.
+          Eager to learn, highly adaptable, and committed to delivering meaningful solutions in the tech industry.
         </p>
         <p
           className="text-zinc-600 leading-relaxed mb-6"
           style={{ fontFamily: 'satoshi-medium' }}
         >
-          I’m continuously learning and exploring new tools and frameworks 
-          to improve my skills. Beyond coding, I enjoy listening to music 
-          and gaming — activities that inspire creativity and problem-solving.
+
         </p>
 
         {/* Highlights Section */}
@@ -67,9 +66,9 @@ const About = () => {
           viewport={{ once: true }}
         >
           {[
-            { title: "Frontend Dev", desc: "Skilled in React, Tailwind CSS, and modern UI principles." },
-            { title: "Responsive Design", desc: "Creating layouts that work on all devices." },
-            { title: "Creative Coding", desc: "Blending creativity with technical skills for unique solutions." }
+            { title: "Frontend Dev", desc: "Creative in HTML and CSS" },
+            { title: "Backend", desc: "Intermediate in Python, Java and Javascript" },
+            { title: "UI/UX Design", desc: "Skilled in Figma and Canva" }
           ].map((item, i) => (
             <motion.div
               key={i}
